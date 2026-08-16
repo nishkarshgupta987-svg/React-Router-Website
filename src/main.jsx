@@ -11,7 +11,6 @@ import Home from './Components/Home/Home.jsx'
 import Contact from './Components/ContactUs/ContactUs.jsx'
 import About from './Components/About/About.jsx'
 import Github, { githubInfoLoader } from './Components/Github/Github.jsx'
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,11 +31,13 @@ const router = createBrowserRouter([
       {
         path: "github",
         element: <Github />,
-        loader: githubInfoLoader//Loader React Router ka ek function hai jo route render hone se pehle data fetch karta hai.
+        loader: githubInfoLoader
       }
     ]
   }
-])
+], {
+  basename: "/React-Router-Website"
+})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
